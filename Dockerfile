@@ -37,7 +37,9 @@ RUN sed -i -e 's/\(exec ".*"\) start/\1 run/' $PENTAHO_HOME/pentaho-server/tomca
 
 #COPY config $PENTAHO_HOME/config
 COPY scripts $PENTAHO_HOME/scripts
+COPY biserver-ce $PENTAHO_HOME/biserver-ce
 
 WORKDIR /opt/pentaho
 EXPOSE 8080
+EXPOSE 8081
 CMD ["sh", "scripts/run.sh"]
