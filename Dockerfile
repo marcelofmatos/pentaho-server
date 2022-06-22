@@ -41,5 +41,5 @@ COPY biserver-ce $PENTAHO_HOME/biserver-ce
 
 WORKDIR /opt/pentaho
 EXPOSE 8080
-EXPOSE 8081
+EXPOSE 8088
 CMD ["sh", "scripts/run.sh"]
