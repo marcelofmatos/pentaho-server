@@ -28,7 +28,7 @@ RUN mkdir ${PENTAHO_HOME}; useradd -s /bin/bash -d ${PENTAHO_HOME} pentaho; chow
 USER pentaho
 
 # Download Pentaho BI Server
-RUN /usr/bin/wget --progress=dot:giga "https://downloads.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/${BISERVER_VERSION}/pentaho-server-ce-${BISERVER_TAG}.zip?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpentaho%2Ffiles%2FBusiness%2520Intelligence%2520Server%2F7.1%2F&ts=1498146222&use_mirror=ufpr" -O /tmp/pentaho-server-ce-${BISERVER_TAG}.zip; \
+RUN /usr/bin/wget --no-check-certificate --progress=dot:giga "https://downloads.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/${BISERVER_VERSION}/pentaho-server-ce-${BISERVER_TAG}.zip?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpentaho%2Ffiles%2FBusiness%2520Intelligence%2520Server%2F7.1%2F&ts=1498146222&use_mirror=ufpr" -O /tmp/pentaho-server-ce-${BISERVER_TAG}.zip; \
     /usr/bin/unzip -q /tmp/pentaho-server-ce-${BISERVER_TAG}.zip -d  $PENTAHO_HOME; \
     rm -f /tmp/pentaho-server-ce-${BISERVER_TAG}.zip $PENTAHO_HOME/pentaho-server/promptuser.sh;
 
